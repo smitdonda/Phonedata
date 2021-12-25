@@ -1,4 +1,5 @@
 
+//create the innerhtml div and img tag
 document.body.innerHTML = `<div class="container">
     <div class="container heading-container ">
     <h1>Phone Data</h1>
@@ -7,7 +8,7 @@ document.body.innerHTML = `<div class="container">
 </div>
 <div id = "mainContainer" class = "main-container"></div>;
 `;
-
+//fetch the api link
 const getData = async () => {
     try {
         const data = await fetch ("https://api-mobilespecs.azharimm.site/v2/top-by-fans")
@@ -18,13 +19,14 @@ const getData = async () => {
             displaydata(data)
         });
     }
+    //print the in console log  error
     catch (error) {
         console.log(error);
     }
 };
-
 getData();
 
+//display data in innerHTML
 const displaydata = (obj)=>{
     mainContainer.innerHTML +=`
         <div class="container main-container" id = "demo">
